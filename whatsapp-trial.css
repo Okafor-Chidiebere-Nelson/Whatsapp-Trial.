@@ -1,0 +1,142 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --light-green: #25d366;
+  --dark-green: #9fff9f80;
+  --teal-green: #128c7e;
+  --teal-green-dark: #075e54;
+  --white: #fff;
+  --black: #000;
+  --silver: silver;
+}
+
+body {
+  background-color: var(--white);
+  height: 100vh;
+  position: relative;
+  cursor: pointer;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.header-container {
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 999999;
+  background-color: var(--teal-green-dark);
+  color: var(--light-green);
+  padding: 0.6em;
+}
+
+.whatsapp-text-container {
+  font-size: 0.7em;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.list-item {
+  color: var(--dark-green);
+}
+
+.active {
+  position: relative;
+  color: var(--light-green);
+  transition: color 0.5s ease-in;
+}
+
+.active::after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline-start: 0;
+  background-color: var(--white);
+}
+
+.content-container {
+  display: flex;
+  margin: 1em;
+  align-items: center;
+}
+
+.image-container {
+  height: 4em;
+  width: 4em;
+  border: 1px solid var(--silver);
+  border-radius: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline-end: 1em;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  transition: all 0.5s ease-in;
+}
+
+img:hover {
+  transform: scale(2);
+  transition: transform 0.5s ease-in;
+}
+
+.person-info-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row nowrap;
+  /* text-align: center; */
+}
+
+.person-sub-container {
+  display: flex;
+  align-items: center;
+  gap: 0 2em;
+}
+
+h1 {
+  font-size: 1em;
+}
+
+.whatsapp-text {
+  font-size: 2.5em;
+  color: var(--white);
+}
+
+.main-container {
+  display: none;
+}
+
+.nelson {
+  display: block;
+  position: absolute;
+  color: var(--black);
+  animation: nelly 0.3s ease-in;
+}
+
+@keyframes nelly {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
